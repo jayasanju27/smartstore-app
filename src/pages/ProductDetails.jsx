@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { smartphonesData } from "../data/smartphoneData";
+import { useNavigate } from "react-router-dom";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -32,6 +33,13 @@ function ProductDetails() {
     addToCart();
     navigate("/checkout");
   };
+
+  <button
+   className="back-btn"
+   onclick={() => navigate(-1)}
+   >
+   ← Back, 
+   </button>
 
   return (
     <>

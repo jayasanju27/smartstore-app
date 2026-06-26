@@ -525,3 +525,39 @@ body,
     width:100%;
     overflow-x:hidden;
 }
+
+.compare-card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    text-align:center;
+}
+
+/* Back Button */
+
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#1565c0;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    margin:20px;
+}
+
+.back-btn:hover{
+    background:#0d47a1;
+}
+
+@media (max-width:768px){
+    .back-btn{
+        font-size:14px;
+        padding:8px 14px;
+        margin:15px;
+    }
+}
