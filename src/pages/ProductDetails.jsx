@@ -51,11 +51,20 @@ function ProductDetails() {
       >
         <div className="details">
 
+
           <div className="details-image">
             <img src={phone.image} alt={phone.name} />
           </div>
 
           <div className="details-info">
+ 
+          {/* Wrap the pnone image*/}
+
+          <div className="image-Wrapper">
+
+            <img src={phone.image} alt={phone.name} />
+            
+          </div>
 
             <h1>{phone.name}</h1>
 
