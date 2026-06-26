@@ -1,22 +1,30 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  return (
-    <nav className="navbar">
-      <div className="navbar-container">
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  return (
+    <nav>
+      <div className="navbar-container">
         <h2 className="logo">📱 SmartStore</h2>
 
-        <div className="menu">
-          <Link to="/">Home</Link>
-          <Link to="/compare">Compare</Link>
-          <Link to="/flagships">Flagships</Link>
-          <Link to="/reviews">Reviews</Link>
-          <Link to="/contact">Contact</Link>
-          <Link to="/faq">FAQ</Link>
-          <Link to="/cart">🛒 Cart</Link>
+        <div
+          className="menu-icon"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
         </div>
 
+        <div className={`menu ${menuOpen ? "active" : ""}`}>
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/compare" onClick={() => setMenuOpen(false)}>Compare</Link>
+          <Link to="/flagships" onClick={() => setMenuOpen(false)}>Flagships</Link>
+          <Link to="/reviews" onClick={() => setMenuOpen(false)}>Reviews</Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+          <Link to="/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
+          <Link to="/cart" onClick={() => setMenuOpen(false)}>🛒 Cart</Link>
+        </div>
       </div>
     </nav>
   );

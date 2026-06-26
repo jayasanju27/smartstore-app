@@ -15,29 +15,34 @@ body{
 nav{
     background: #1565c0;
     color: white;
-    padding: 15px 40px;
+    padding: 15px 20px;
+    width:100%;
 }
 
 .navbar-container{
     display: flex;
+    justify-content:space-between;
     align-items: center;
+    max-width:1300px;
+    margin:auto;
+   position:relative;
 }
 
 .logo{
-    margin-right: 50px;
+    font-size:28px;
+    font-weight:bold;
 }
 
 .menu{
     display: flex;
-    gap: 35px;
-    align-items: center;
+    gap: 20px;
 }
 
 .menu a{
     color: white;
-    text-decoration: none;
+    text-decoration:none;
     font-size: 18px;
-    font-weight: 600;
+    font-weight:600;
 }
 
 
@@ -45,6 +50,48 @@ nav{
     color: #ffd700;
 }
 
+.menu-icon{
+    display:none;
+    font: size 30px;
+    cursor:pointer;
+}
+
+/*Mobile*/
+
+@media(max-width:768px){
+
+  .menu-icon{
+    display:block;
+  }
+
+  .menu{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#1565c0;
+    flex-direction:column;
+    text-align:center;
+    padding:20px 0;
+  }
+
+  .menu.active{
+    display:flex;
+  }
+
+  .menu a {
+    padding: 12px;
+  }
+
+  .hero h1{
+    font: size 18px;
+  }
+
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+}
 nav h1{
     font-size:30px;
 }
@@ -63,7 +110,8 @@ nav a:hover{
 /* Hero */
 
 .hero{
-    background:linear-gradient(to right,#1565c0,#512da8);
+    width: 100%;
+    background:linear-gradient(to right,#1e3a8a,#2563eb);
     color:white;
     text-align:center;
     padding:60px 20px;
@@ -209,25 +257,24 @@ footer{
 }
 
 .product-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-    justify-items:center;
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+    gap: 30px;
+    justify-content: center;
 }
 
+
 .product-card{
-    width: 280px;;
-    background:#fff;
-    border-radius:12px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(9, 9, 9, 0.15);
+    width:100%;
+    max-width:320px;
+    margin:auto;
 }
 
 .product-card img{
-    width:220px;
-    height:220px;
-    object-fit:contain;
+    width:100%;
+    height:auto;
+    max-width:220px;
     display:block;
     margin:auto;
 }
@@ -416,9 +463,10 @@ footer{
 }
 
 .compare-container{
+    width: 90px;
     max-width:1200px;
     margin:40px auto;
-    padding:20px;
+    
 }
 
 .compare-container h1{
@@ -470,4 +518,10 @@ footer{
     padding:20px;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
     text-align:center;
+}
+html,
+body,
+#root{
+    width:100%;
+    overflow-x:hidden;
 }
