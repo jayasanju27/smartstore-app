@@ -2,12 +2,20 @@ import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { smartphonesData } from "../data/smartphoneData";
+import { toast } from "react-toastify";
 
 function ProductDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
 
   const phone = smartphonesData.find((p) => p.id === id);
+  const relatedPhones = smartphonesData
+  .filter(
+    (item) =>
+      item.brand === phone.brand &&
+      item.id !== phone.id
+  )
+  .slice(0, 4);
 
   if (!phone) {
     return (
@@ -25,7 +33,7 @@ function ProductDetails() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.push(phone);
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert("Phone added to cart!");
+    toast.success("🛒 Added to Cart");
   };
 
   const buyNow = () => {
@@ -49,7 +57,7 @@ function ProductDetails() {
         <div className="product-box">
 
           <img
-            src={phone.image}
+           src={phone.image}
             alt={phone.name}
             className="product-image"
           />
@@ -123,6 +131,49 @@ function ProductDetails() {
       </div>
 
       <Footer />
+      
+      {/* Related Products */}
+
+<div className="related-products">
+
+  <h2>Related Smartphones</h2>
+
+  <div className="related-grid">
+
+    {relatedPhones.map((item) => (
+
+      <div
+        className="related-card"
+        key={item.id}
+      >
+
+        <img
+          src={item.image}
+          alt={item.name}
+        />
+
+        <h3>{item.name}</h3>
+
+        <p>
+          ₹{item.price.toLocaleString("en-IN")}
+        </p>
+
+        <button
+          className="btn"
+          onClick={() =>
+            navigate(`/product/${item.id}`)
+          }
+        >
+          View Details
+        </button>
+
+      </div>
+
+    ))}
+
+  </div>
+
+</div>
 
     </>
   );

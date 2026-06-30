@@ -20,12 +20,12 @@ export const smartphonesData = [
 
   {
     id: "iphone-15-pro-max",
-    name: "iPhone 15 Pro Max",
+    name: "iPhone-15-pro-max",
     brand: "Apple",
     price: 159900,
     originalPrice: 169900,
     rating: 4.9,
-    image: "/phone-images/Apple/iphone 15.jpg",
+    image:"/phone-images/Apple/iphone 15-pro-max.jpg",
     description: "Titanium design powered by the A17 Pro chip.",
     specs: {
       processor: "Apple A17 Pro",
@@ -225,7 +225,7 @@ export const smartphonesData = [
   price: 59999,
   originalPrice: 64999,
   rating: 4.7,
-  image: "phone-images/Realme/Realme.jpg",
+  image:"/phone-images/Realme/Realme.jpg",
   description: "Gaming flagship powered by Snapdragon.",
   specs: {
     processor: "Snapdragon 8 Gen 3",
