@@ -4236,8 +4236,10 @@ footer p{
 
   .search-box{
     width:100%;
-    margin:12px 0;
-  }
+    max-width:100%;
+    position:relative;
+    margin:0;
+}
 
   .search-box input{
     width:100%;
@@ -4260,9 +4262,9 @@ footer p{
   }
 }
 
-html,body {
+html,
+body,
+#root{
     width:100%;
-    overflom-x:hidden;
-    margin:0;
-    padding:0;
+    overflow-x:hidden;
 }
