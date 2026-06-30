@@ -4259,3 +4259,10 @@ footer p{
     border-radius:14px;
   }
 }
+
+html,body {
+    width:100%;
+    overflom-x:hidden;
+    margin:0;
+    padding:0;
+}
